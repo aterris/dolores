@@ -1,0 +1,12 @@
+source 'https://rubygems.org'
+
+gem 'dolores'
+gem 'sinatra'
+gem 'dotenv'
+
+group :test, :development do
+  gem 'foreman'
+  gem 'unicorn'
+  gem 'pry'
+  gem 'rspec'
+end

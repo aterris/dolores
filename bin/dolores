@@ -1,0 +1,32 @@
+#!/usr/bin/env ruby
+# encoding: utf-8
+
+require 'thor'
+
+path = File.expand_path('../../lib', __FILE__)
+require "#{path}/dolores/bootstrap"
+require "#{path}/dolores/interactive"
+
+module Dolores
+  class CLI < Thor
+    package_name "Dolores"
+
+    desc 'bootstrap', 'Bootstrap a new sinatra based chatbot'
+    def bootstrap(name)
+      Dolores::Bootstrap.new(name)
+    end
+
+    desc 'interactive', 'Launch interactive session'
+    option :require, :type => :string, :aliases => :r
+    def interactive
+      Dolores::Interactive::REPL.new(options)
+    end
+  end
+end
+
+begin
+  Dolores::CLI.start
+rescue SystemExit, Interrupt
+rescue Exception => e  
+  puts e.message
+end  
