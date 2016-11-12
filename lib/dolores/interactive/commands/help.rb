@@ -3,7 +3,7 @@ module Dolores::Interactive
     group 'Help'
 
     def group_sort_key(group_name)
-      [%w(Help Wit Commands).index(group_name.gsub(' ', '_')) || 99, group_name]
+      [%w(Help Wit Commands).index(group_name.tr(' ', '_')) || 99, group_name]
     end
   end
 

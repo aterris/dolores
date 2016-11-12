@@ -56,8 +56,8 @@ module Dolores
     def generate_file(path, output_path=nil)
       output_path ||= path
 
-      file = File.open("#{@dolores_root}/bootstrap/templates/#{path}", 'rb') { |file| file.read }
-      File.write("#{@bot_root}/#{output_path}", ERB.new(file).result(binding))
+      template_file = File.open("#{@dolores_root}/bootstrap/templates/#{path}", 'rb') { |file| file.read }
+      File.write("#{@bot_root}/#{output_path}", ERB.new(template_file).result(binding))
       display_create(output_path)
     end
 

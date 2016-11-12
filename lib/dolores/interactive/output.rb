@@ -44,7 +44,6 @@ module Dolores
         puts((' ' * (max_width - 1)) + '*')
 			end
 
-			private
 			def self.split_message_for_chat_window(message)
 				Dolores::Utilities.word_wrap(message, line_width: 42).split("\n")
 			end
@@ -59,5 +58,5 @@ module Dolores
       end
 			
 		end
-	end
+  end
 end

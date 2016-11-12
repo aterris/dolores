@@ -12,7 +12,7 @@ module Dolores::Interactive
 
       conversation_request = Dolores::Channels::Interactive::Request.new(message, channel)
       
-      conversation = Dolores::Wit::Conversation.new({
+      Dolores::Wit::Conversation.new({
         conversation_id: SecureRandom.uuid,
         context: {},
         request: conversation_request
