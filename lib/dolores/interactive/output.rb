@@ -1,7 +1,7 @@
 require 'dolores/utilities/word_wrap'
 
 module Dolores
-	module Interactive
+  module Interactive
 		
     module Output
 
@@ -57,6 +57,6 @@ module Dolores
         '*' + space + '*'
       end
 			
-		end
+    end
   end
 end
